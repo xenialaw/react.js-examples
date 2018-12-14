@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Create html element example</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js" crossorigin></script>
+    <script type='text/babel'>
+    function Person1(){
+        return React.createElement('h3',null,"I'm a React App!");
+    }
+    function Person2(){
+        return (
+            <div>
+                <h3>Method 2</h3>
+            </div>
+        );
+    }
+    //the react code would be complie to these format:
+    function Person3(){
+        return React.createElement('div',{className:'App'},React.createElement("h3",null,"Does it work now ?"));
+    }
+    var app = (
+      <div>
+        <Person1 />
+        <Person2 />
+        <Person3 />
+      </div>
+    )
+    ReactDOM.render(app,document.querySelector("#app"));
+    </script>
+</body>
+</html>

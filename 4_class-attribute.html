@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Class attribute example</title>
+    <style>
+        .red {color:red;}
+    </style>
+</head>
+<body>
+    <p>There is some restrictions in react, for example you can't use class name.</p>
+    <div id="app"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js" crossorigin></script>
+    <script type='text/babel'>
+    function Person(){
+        return (
+            <div><h3 class="red">Person</h3></div>
+        );
+    }
+    function Dog(){
+        return (
+            <div><h3 className="red">Dog</h3></div>
+        );
+    }
+    var app = (
+      <div>
+        <Person />
+        <Dog />
+      </div>
+    )
+    ReactDOM.render(app,document.querySelector("#app"));
+    </script>
+</body>
+</html>

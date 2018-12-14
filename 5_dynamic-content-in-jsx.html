@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>dynamic content in jsx</title>
+</head>
+<body>
+    <p>output dynamic content as part of our jsx content. In this emample we use one-line expression.</p>
+    <div id="app"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js" crossorigin></script>
+    <script type='text/babel'>
+    function Person(){
+        return (
+            <div><h3 class="red">I am {Math.floor(Math.random()*10)} years old.</h3></div>
+        );
+    }
+    var app = (
+      <div>
+        <Person />
+        <Person />
+        <Person />
+        <Person />
+      </div>
+    )
+    ReactDOM.render(app,document.querySelector("#app"));
+    </script>
+</body>
+</html>

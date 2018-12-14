@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>component example</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js" crossorigin></script>
+
+<script type='text/babel'>
+function Person(props){
+    return (
+        <div>Person</div>
+    )
+}
+
+var app = (
+  <div>
+    <Person />
+    <Person />
+  </div>
+)
+
+ReactDOM.render(app,document.querySelector("#app"));
+</script>
+  </body>
+</html>
