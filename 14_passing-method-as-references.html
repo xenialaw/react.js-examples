@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Passing method as references</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js" crossorigin></script>
+    <script type='text/babel'>
+    const Person = (props) => {
+        return (
+            <div>
+                <p onClick={props.click}>I am {props.name} and {props.age} years ago.</p>
+            </div>
+        )
+    }
+    
+    class App extends React.Component{
+        state = {
+            people:[
+                {name:"Max", age:28},
+                {name:"Manu", age:29},
+                {name:"Stephanie", age:26},
+            ],
+            otherState:"1"
+        }
+        
+        switchNameHandler =() => {
+            this.setState({
+                people:[
+                    {name:"John",age:19},
+                    {name:"May",age:28},
+                    {name:"Ann",age:17},
+                ]
+            });
+            console.log("switchNameHandler ran!")
+        }
+        
+        render(){
+            return (
+                <div>
+                    <p><b>Please click this first line below to test:</b></p>
+                    <hr />
+                    <Person name={this.state.people[0].name} 
+                        age={this.state.people[0].age} 
+                        click={this.switchNameHandler}
+                        />
+                    <Person name={this.state.people[1].name} 
+                        age={this.state.people[1].age} />
+                    <Person name={this.state.people[2].name} 
+                        age={this.state.people[2].age} />
+                    <button onClick={()=>this.switchNameHandler()}>Clicked</button>
+                </div>
+            );
+        }
+    }
+    
+    ReactDOM.render(<App />, document.querySelector("#app"));
+    </script>
+</body>
+</html>
