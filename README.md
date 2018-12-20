@@ -7,9 +7,9 @@ A list of react.js example in html files format with react.js features. The file
 You can simply open the files in browser to check the result
 
 ### Version
-React : 15.6.1
-React dom : 15.6.1
-Babel: 7.2.2
+- React : 15.6.1
+- React dom : 15.6.1
+- Babel: 7.2.2
 
 ## Contributing
 
